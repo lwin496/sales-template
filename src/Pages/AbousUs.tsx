@@ -1,11 +1,15 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
+import { motion } from 'framer-motion'
 const AbousUs = () => {
   return (
-    <div>
-      <Navbar />
+    <motion.div className='bg-[#171717] text-white h-screen'
+    initial={{width: 0}}
+    animate={{width: "100%"}}
+    exit={{ x: window.innerWidth, transition: {duration:0.5}}}
+  >
+      
       <h1>About us</h1>
-    </div>
+    </motion.div>
   )
 }
 

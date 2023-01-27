@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import {FaBars} from 'react-icons/fa'
+import {HiOutlineBars3} from 'react-icons/hi2'
 import {useState} from 'react'
 import {motion , AnimatePresence} from "framer-motion"
 
@@ -18,28 +18,28 @@ const Navbar = () => {
                   height:0,
                   transition:{ 
                         ease:"easeInOut",
-                        duration:0.3,
+                        duration:0.2,
                         delay:.1,
                   }
             }
       }
 
   return (
-            <div className='relative flex flex-col w-[100%] h-[100vh]'>
-                  <header className='flex justify-end w-[100%] h-[58px] border-b-4 border-blue-600 pb-[50px]'>
-                        <FaBars className='h-[58px] w-[58px] dflex cursor-pointer' onClick={isOpen}/>
+            <div className='absolute flex flex-col w-[100%] h-[100vh] z-40'>
+                  <header className='flex items-center justify-end w-[100%] h-[5vh] bg-black'>
+                        <HiOutlineBars3 className='h-[40px] w-[40px] dflex cursor-pointer  text-white' onClick={isOpen}/>
                   </header>   
                   <AnimatePresence>
                   {
                         open && (
-                              <motion.div className='absolute w-[100%] h-[100vh] bg-black text-white dflex flex-col txt pt-[10vh]'
+                              <motion.div className='fixed w-[100%] h-[100vh] bg-black text-white dflex flex-col txt'
                                     variants={item}
                                     initial={{height:0,opacity:0}}
                                     animate={{height:"100vh", opacity:1}}
                                     transition={{delay:.1}}
                                     exit="exit"
                               >
-                                    <div className='dflex h-[58px] w-[58px] bg-white text-black rounded-[58px] absolute top-[40px] right-[20px] z-10 cursor-pointer text-[18px]' onClick={closeMenu}>X</div>
+                                    <div className='dflex h-[58px] w-[58px] bg-white text-black rounded-[58px] absolute top-[10px] right-[20px] z-10 cursor-pointer text-[18px]' onClick={closeMenu}>X</div>
                                     <motion.div
                                           variants={item}
                                           initial={{y:90,opacity:0}}
@@ -54,13 +54,13 @@ const Navbar = () => {
                                                 }
                                           }}
                                     >
-                                          <NavLink to = '/' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] my-[1vh] '>
+                                          <NavLink to = '/' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] my-[1vh]  '  onClick={closeMenu}>
                                                 HOME
                                           </NavLink>
                                     </motion.div>
                                     <motion.div
                                           variants={item}
-                                          initial={{y:90,opacity:0}}
+                                          initial={{y:80,opacity:0}}
                                           animate={{y:0, opacity:1}}
                                           transition={{delay:.6}}
                                           exit={{
@@ -72,13 +72,13 @@ const Navbar = () => {
                                                 }
                                           }}
                                     >
-                                          <NavLink to = '/about' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem]  xl:text-[5rem] my-[1vh]'>
+                                          <NavLink to = '/about' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem]  xl:text-[5rem] my-[1vh]' onClick={closeMenu}>
                                                 ABOUT
                                           </NavLink>
                                     </motion.div>
                                     <motion.div
                                           variants={item}
-                                          initial={{y:90,opacity:0}}
+                                          initial={{y:70,opacity:0}}
                                           animate={{y:0, opacity:1}}
                                           transition={{delay:.5}}
                                           exit={{
@@ -90,13 +90,13 @@ const Navbar = () => {
                                                 }
                                           }}
                                     >
-                                          <NavLink to = '/login' className='dflex inline-flex h-[80px] text-[2.6rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] my-[1vh]'>
+                                          <NavLink to = '/login' className='dflex inline-flex h-[80px] text-[2.6rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] my-[1vh]'  onClick={closeMenu}>
                                                 LOGIN
                                           </NavLink>
                                     </motion.div>   
                                     <motion.div
                                             variants={item}
-                                            initial={{y:90,opacity:0}}
+                                            initial={{y:60,opacity:0}}
                                             animate={{y:0, opacity:1}}
                                             transition={{delay:.4}}
                                             exit={{
@@ -108,7 +108,7 @@ const Navbar = () => {
                                                   }
                                             }}
                                     >
-                                          <NavLink to = '/contact' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem]  xl:text-[5rem] my-[1vh]'>
+                                          <NavLink to = '/contact' className='dflex inline-flex h-[80px] overflow-hidden text-[2.6rem] md:text-[4rem] lg:text-[4.5rem]  xl:text-[5rem] my-[1vh]'  onClick={closeMenu}>
                                                 CONTACT
                                           </NavLink>
                                     </motion.div>   

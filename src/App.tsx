@@ -1,8 +1,15 @@
-
+import {BrowserRouter as Router} from 'react-router-dom';
+import AnimatedRoutes from './Components/AnimatedRoutes';
+import Navbar from './Components/Navbar';
 function App() {
+
+
   return (
-   <div>
-    h1
+   <div className='App'>
+      <Router>
+        <Navbar />
+        <AnimatedRoutes />
+      </Router>
    </div>
   );
 }
